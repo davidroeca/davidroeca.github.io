@@ -1,71 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-        <meta charset="utf-8" />
-        <title>David's Personal Site - Python</title>
-        <link rel="stylesheet" href="https://davidroeca.github.io/theme/css/main.css" />
-        <link href="https://davidroeca.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="David's Personal Site Atom Feed" />
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <!--[if IE]>
-            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-</head>
+    <title>Python &ndash; David's Personal Site</title>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="https://davidroeca.github.io/">David's Personal Site </a></h1>
-                <nav><ul>
-                    <li class="active"><a href="https://davidroeca.github.io/category/python.html">Python</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+    <!-- Meta -->
+    <meta name="description" content="David's Personal Site &ndash; ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="https://davidroeca.github.io/first-post.html">First Post!</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2018-03-22T13:30:00-05:00">
-                Published: Thu 22 March 2018
-        </abbr>
-		<br />
-        <abbr class="modified" title="2018-03-22T13:30:00-05:00">
-                Updated: Thu 22 March 2018
-        </abbr>
+    <!-- Social -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="David's Personal Site"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:site_name" content="David's Personal Site" />
+    <meta property="og:url" content="https://davidroeca.github.io"/>
+    <meta property="og:image" content=""/>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://davidroeca.github.io/author/david-roeca.html">David Roeca</a>
-        </address>
-<p>In <a href="https://davidroeca.github.io/category/python.html">Python</a>.</p>
-<p>tags: <a href="https://davidroeca.github.io/tag/pelican.html">pelican</a> <a href="https://davidroeca.github.io/tag/publishing.html">publishing</a> </p>
-</footer><!-- /.post-info --><p>Checking out pelican right now, I'll get back to you later with a real post.</p>                </article>
-            </aside><!-- /#featured -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="http://getpelican.com/">Pelican</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="https://davidroeca.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="David's Personal Site">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:url" content="https://davidroeca.github.io">
+    <meta name="twitter:image" content="">
 
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
+    <!-- Feed -->
+    <link rel="alternate" type="application/atom+xml" href="https://davidroeca.github.io/feeds/all.atom.xml" title="David's Personal Site Atom Feed" />
+    <link rel="alternate" type="application/atom+xml" href="https://davidroeca.github.io/feeds/python.atom.xml" title="David's Personal Site Categories Atom Feed" />
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:regular,bold">
+    <link rel="stylesheet" type="text/css" href="https://davidroeca.github.io/theme/css/w3.css">
+    <link rel="stylesheet" type="text/css" href="https://davidroeca.github.io/theme/css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://davidroeca.github.io/theme/css/jqcloud.css">
+    <link rel="stylesheet" type="text/css" href="https://davidroeca.github.io/theme/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://davidroeca.github.io/theme/css/pygments-highlight-github.css">
 
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
+    <!-- Icon -->
 
-</body>
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://davidroeca.github.io/theme/js/jqcloud.min.js"></script>
+  </head>
+
+  <body>
+    <div class="w3-row w3-card w3-white">
+      <header id="header">
+        <a href="https://davidroeca.github.io" id="header-logo" title="Home">DR</a>
+        <nav id="header-menu">
+          <ul>
+            <li class="w3-bottombar w3-border-white w3-hover-border-green" style="font-weight: bold;"><a href="https://davidroeca.github.io/category/python.html">Python</a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+
+
+    <br><br><br>
+
+    <div class="w3-container col-main w3-center">
+      <h2>Python</h2>
+    </div>
+
+
+
+    <br><br><br>
+
+    <section id="listing">
+      <article class="w3-container w3-card-2 w3-white col-main">
+        <header>
+          <h2><a href="https://davidroeca.github.io/first-post.html">First Post!</a></h2>
+          <div class="post-info">
+            <div class="w3-opacity w3-margin-right w3-margin-bottom" style="flex-grow: 1;">
+              <span><time datetime="2018-03-22T13:30:00-05:00">Thu 22 March 2018</time> in <a href="https://davidroeca.github.io/category/python.html" title="All articles in category Python">Python</a></span>
+            </div>
+            <div class="w3-margin-right">
+              <span class="w3-tag w3-light-grey w3-text-green w3-hover-green">
+                <a href="https://davidroeca.github.io/tag/pelican.html" title="All articles with Pelican tag">#pelican</a>
+              </span>
+              <span class="w3-tag w3-light-grey w3-text-green w3-hover-green">
+                <a href="https://davidroeca.github.io/tag/publishing.html" title="All articles with Publishing tag">#publishing</a>
+              </span>
+            </div>
+          </div>
+        </header>
+
+        <div class="entry-content">
+          I am learning pelican
+        </div>
+
+        <footer>
+          <a class="w3-btn w3-green w3-right" href="https://davidroeca.github.io/first-post.html">Read &#10093;</a>
+        </footer>
+      </article>
+
+      <br><br><br>
+
+
+
+    </section>
+
+
+    <footer id="footer">
+      <div id="footer-copyright" class="w3-center w3-small w3-text-grey w3-padding-48">
+        <span>
+          &copy;
+          2018          David Roeca
+ | <a href="https://davidroeca.github.io/feeds/all.atom.xml">Atom feed <i class="fa fa-rss" aria-hidden="true"></i></a>        </span>
+      </div>
+    </footer>
+
+
+
+  </body>
 </html>
