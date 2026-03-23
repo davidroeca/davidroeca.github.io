@@ -1,2 +1,3 @@
-## Personal site
-This is the source output from pelican
+# Personal site
+
+Basic personal site configuration

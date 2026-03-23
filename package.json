@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@biomejs/biome": "^2.4.8",
+    "prettier": "^3.8.1"
+  }
+}
