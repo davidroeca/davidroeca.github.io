@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @keyframes ticker-scroll {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #cce9e6;
+        background-image: radial-gradient(
+          circle,
+          rgba(26, 26, 26, 0.15) 1.5px,
+          transparent 1.5px
+        );
+        background-size: 22px 22px;
+        font-family: 'Space Grotesk', system-ui, sans-serif;
+        color: #1a1a1a;
+        min-height: 100vh;
+        padding: 40px 20px 60px;
+        overflow-x: hidden;
+      }
+      .container {
+        max-width: 700px;
+        margin: 0 auto;
+        position: relative;
+      }
+      /* --- Decorative shapes --- */
+      .deco-circle,
+      .deco-square {
+        position: absolute;
+        border: 3px solid #1a1a1a;
+        box-shadow: 5px 5px 0 #1a1a1a;
+        pointer-events: none;
+        background: var(--deco-bg, #f7f2e8);
+        z-index: 1;
+      }
+      .deco-circle {
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      .deco-square {
+        transform: rotate(var(--deco-rotate, 12deg));
+      }
+      /* Size modifiers */
+      .deco-sm {
+        width: clamp(36px, 8vw, 50px);
+        height: clamp(36px, 8vw, 50px);
+      }
+      .deco-md {
+        width: clamp(50px, 11vw, 70px);
+        height: clamp(50px, 11vw, 70px);
+      }
+      .deco-lg {
+        width: clamp(64px, 14vw, 88px);
+        height: clamp(64px, 14vw, 88px);
+      }
+      /* Named placement classes */
+      .deco-surfer { top: 30px; right: 80px; }
+      .deco-palm   { top: 350px; right: -80px; }
+      .deco-shark  { bottom: 110px; left: -64px; }
+      .deco-wave   { top: 230px; left: -85px; }
+      .deco-shaka  { bottom: 20px; right: -85px; }
+      /* Mobile: pull gutter shapes to container edge */
+      @media (max-width: 860px) {
+        .deco-surfer { right: -15px; }
+        .deco-palm   { right: -15px; }
+        .deco-shark  { left: -20px; }
+        .deco-wave   { left: -20px; }
+        .deco-shaka  { right: -15px; }
+      }
+      /* Inner image */
+      .deco-circle img,
+      .deco-square img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        padding: var(--deco-pad, 10px);
+      }
+      .name-block {
+        display: inline-block;
+        background: #f7f2e8;
+        border: 4px solid #1a1a1a;
+        box-shadow: 8px 8px 0 #1a1a1a;
+        padding: 20px 28px;
+        margin-bottom: 20px;
+      }
+      h1 {
+        font-size: 68px;
+        font-weight: 900;
+        letter-spacing: -2px;
+        line-height: 0.9;
+        text-transform: uppercase;
+      }
+      .badge {
+        display: inline-block;
+        background: #00c2b0;
+        color: #1a1a1a;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        padding: 7px 16px;
+        border: 3px solid #1a1a1a;
+        box-shadow: 4px 4px 0 #1a1a1a;
+        margin-bottom: 36px;
+      }
+      .ticker-wrap {
+        border-top: 3px solid #1a1a1a;
+        border-bottom: 3px solid #1a1a1a;
+        background: #1a1a1a;
+        overflow: hidden;
+        margin-bottom: 28px;
+        padding: 10px 0;
+      }
+      .ticker-inner {
+        display: inline-block;
+        white-space: nowrap;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: #f7f2e8;
+        animation: ticker-scroll 18s linear infinite;
+      }
+      .card {
+        background: #f7f2e8;
+        border: 3px solid #1a1a1a;
+        box-shadow: 6px 6px 0 #1a1a1a;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 0;
+      }
+      .card-label {
+        background: #1a1a1a;
+        color: #f7f2e8;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        padding: 7px 16px;
+      }
+      .card-body {
+        padding: 24px;
+        font-size: 15px;
+        line-height: 1.75;
+        font-weight: 500;
+      }
+      .corner-dot {
+        position: absolute;
+        top: -10px;
+        right: 18px;
+        width: 20px;
+        height: 20px;
+        background: #ffd600;
+        border: 3px solid #1a1a1a;
+        border-radius: 50%;
+      }
+      .link-btn {
+        display: block;
+        border: 3px solid #1a1a1a;
+        box-shadow: 5px 5px 0 #1a1a1a;
+        padding: 14px 20px;
+        text-decoration: none;
+        color: #1a1a1a;
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        transition:
+          transform 0.08s,
+          box-shadow 0.08s;
+        background: #f7f2e8;
+        margin-bottom: 12px;
+      }
+      .link-btn:hover {
+        transform: translate(2px, 2px);
+        box-shadow: 3px 3px 0 #1a1a1a;
+      }
+      .link-btn:active {
+        transform: translate(5px, 5px);
+        box-shadow: 0 0 0 #1a1a1a;
+      }
+      .link-btn.red {
+        background: #00c2b0;
+        color: #1a1a1a;
+      }
+      .link-btn.black {
+        background: #ffd600;
+        color: #1a1a1a;
+      }
+      .link-btn::before {
+        content: '◆  ';
+      }
+      .footer {
+        margin-top: 40px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: rgba(26, 26, 26, 0.35);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="deco-circle deco-lg deco-surfer" style="--deco-bg: #f7f2e8; --deco-pad: 14px">
+        <img src="svgs/surfer.svg" alt="A surfer riding a wave" />
+      </div>
+      <div class="deco-square deco-sm deco-palm" style="--deco-bg: #ffd600; --deco-rotate: 14deg; --deco-pad: 8px">
+        <img src="svgs/palm.svg" alt="A palm tree" />
+      </div>
+      <div class="deco-circle deco-sm deco-shark" style="--deco-bg: #00c2b0; --deco-pad: 10px">
+        <img src="svgs/shark.svg" alt="A shark" />
+      </div>
+      <div class="deco-square deco-md deco-wave" style="--deco-bg: #f7f2e8; --deco-rotate: -10deg; --deco-pad: 10px">
+        <img src="svgs/wave.svg" alt="A wave" />
+      </div>
+      <div class="deco-circle deco-md deco-shaka" style="--deco-bg: #ffd600; --deco-pad: 12px">
+        <img src="svgs/shaka.svg" alt="Shaka" />
+      </div>
+      <div class="name-block">
+        <h1>David<br />Roeca</h1>
+      </div>
+      <br />
+      <div class="badge">Software Engineer</div>
+
+      <div class="ticker-wrap">
+        <div class="ticker-inner">
+          ★ LEARNING ★ SURFING ★ SHIPPING CODE ★ OPEN SOURCE ★ SCIENCE ★
+          &nbsp;&nbsp; ★ LEARNING ★ SURFING ★ SHIPPING CODE ★ OPEN SOURCE ★
+          SCIENCE ★ &nbsp;&nbsp;
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="corner-dot"></div>
+        <div class="card-label">About</div>
+        <div class="card-body">
+          I love learning new things. The ocean is my happy place. I ship
+          software and help mentor other software engineers for a living. I
+          studied physics in undergrad and still love pondering the great
+          mysteries of the universe. I enjoy reading, particularly a good
+          science fiction, but any genre will do.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">Links</div>
+        <div class="card-body">
+          <a href="https://github.com/davidroeca" class="link-btn red">
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/david-roeca" class="link-btn">
+            LinkedIn
+          </a>
+          <a href="#contact" id="contact" class="link-btn black">
+            Contact: first [dot] last [at] gmail
+          </a>
+        </div>
+      </div>
+      <div class="footer">Made in Honolulu, HI // Always curious</div>
+    </div>
+  </body>
+</html>
