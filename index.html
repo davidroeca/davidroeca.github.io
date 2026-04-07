@@ -72,18 +72,43 @@
         height: clamp(64px, 14vw, 88px);
       }
       /* Named placement classes */
-      .deco-surfer { top: 30px; right: 80px; }
-      .deco-palm   { top: 350px; right: -80px; }
-      .deco-shark  { bottom: 110px; left: -64px; }
-      .deco-wave   { top: 230px; left: -85px; }
-      .deco-shaka  { bottom: 20px; right: -85px; }
+      .deco-surfer {
+        top: 30px;
+        right: 80px;
+      }
+      .deco-palm {
+        top: 350px;
+        right: -80px;
+      }
+      .deco-shark {
+        bottom: 110px;
+        left: -64px;
+      }
+      .deco-wave {
+        top: 230px;
+        left: -85px;
+      }
+      .deco-shaka {
+        bottom: 20px;
+        right: -85px;
+      }
       /* Mobile: pull gutter shapes to container edge */
       @media (max-width: 860px) {
-        .deco-surfer { right: -15px; }
-        .deco-palm   { right: -15px; }
-        .deco-shark  { left: -20px; }
-        .deco-wave   { left: -20px; }
-        .deco-shaka  { right: -15px; }
+        .deco-surfer {
+          right: -15px;
+        }
+        .deco-palm {
+          right: -15px;
+        }
+        .deco-shark {
+          left: -20px;
+        }
+        .deco-wave {
+          left: -20px;
+        }
+        .deco-shaka {
+          right: -15px;
+        }
       }
       /* Inner image */
       .deco-circle img,
@@ -172,6 +197,38 @@
         border: 3px solid #1a1a1a;
         border-radius: 50%;
       }
+      .corner-square {
+        position: absolute;
+        top: -10px;
+        right: 18px;
+        width: 22px;
+        height: 22px;
+        background: #ff4d4d;
+        border: 3px solid #1a1a1a;
+        color: #1a1a1a;
+        font-size: 12px;
+        font-weight: 900;
+        transition: transform 0.15s ease;
+      }
+      .corner-square::before {
+        content: '▶';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        line-height: 1;
+        transform: translate(-50%, -55%);
+      }
+      details[open] > summary .corner-square {
+        transform: rotate(90deg);
+      }
+      .demos-card > summary {
+        list-style: none;
+        cursor: pointer;
+        position: relative;
+      }
+      .demos-card > summary::-webkit-details-marker {
+        display: none;
+      }
       .link-btn {
         display: block;
         border: 3px solid #1a1a1a;
@@ -220,19 +277,34 @@
   </head>
   <body>
     <div class="container">
-      <div class="deco-circle deco-lg deco-surfer" style="--deco-bg: #f7f2e8; --deco-pad: 14px">
+      <div
+        class="deco-circle deco-lg deco-surfer"
+        style="--deco-bg: #f7f2e8; --deco-pad: 14px"
+      >
         <img src="svgs/surfer.svg" alt="A surfer riding a wave" />
       </div>
-      <div class="deco-square deco-sm deco-palm" style="--deco-bg: #ffd600; --deco-rotate: 14deg; --deco-pad: 8px">
+      <div
+        class="deco-square deco-sm deco-palm"
+        style="--deco-bg: #ffd600; --deco-rotate: 14deg; --deco-pad: 8px"
+      >
         <img src="svgs/palm.svg" alt="A palm tree" />
       </div>
-      <div class="deco-circle deco-sm deco-shark" style="--deco-bg: #00c2b0; --deco-pad: 10px">
+      <div
+        class="deco-circle deco-sm deco-shark"
+        style="--deco-bg: #00c2b0; --deco-pad: 10px"
+      >
         <img src="svgs/shark.svg" alt="A shark" />
       </div>
-      <div class="deco-square deco-md deco-wave" style="--deco-bg: #f7f2e8; --deco-rotate: -10deg; --deco-pad: 10px">
+      <div
+        class="deco-square deco-md deco-wave"
+        style="--deco-bg: #f7f2e8; --deco-rotate: -10deg; --deco-pad: 10px"
+      >
         <img src="svgs/wave.svg" alt="A wave" />
       </div>
-      <div class="deco-circle deco-md deco-shaka" style="--deco-bg: #ffd600; --deco-pad: 12px">
+      <div
+        class="deco-circle deco-md deco-shaka"
+        style="--deco-bg: #ffd600; --deco-pad: 12px"
+      >
         <img src="svgs/shaka.svg" alt="Shaka" />
       </div>
       <div class="name-block">
@@ -264,10 +336,20 @@
       <div class="card">
         <div class="card-label">Links</div>
         <div class="card-body">
-          <a href="https://github.com/davidroeca" class="link-btn red">
+          <a
+            href="https://github.com/davidroeca"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-btn red"
+          >
             GitHub
           </a>
-          <a href="https://www.linkedin.com/in/david-roeca" class="link-btn">
+          <a
+            href="https://www.linkedin.com/in/david-roeca"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-btn"
+          >
             LinkedIn
           </a>
           <a href="#contact" id="contact" class="link-btn black">
@@ -275,6 +357,22 @@
           </a>
         </div>
       </div>
+      <details class="card demos-card">
+        <summary>
+          <div class="corner-square"></div>
+          <div class="card-label">Demos</div>
+        </summary>
+        <div class="card-body">
+          <a
+            href="https://davidroeca.com/zig-raytracer"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-btn"
+          >
+            Zig Raytracer
+          </a>
+        </div>
+      </details>
       <div class="footer">Made in Honolulu, HI // Always curious</div>
     </div>
   </body>
